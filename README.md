@@ -5,11 +5,13 @@ Department of Electronics and Communication Engineering
 
 # Active Suspension Control System using MATLAB & Simulink
 
-## Introduction
+##  Project Overview
+This project focuses on designing an active suspension control system to reduce vehicle body vibrations caused by road disturbances.
 
-Vehicle suspension systems are designed to reduce the effect of road disturbances on the vehicle body and improve ride comfort. In conventional passive suspension systems, the damping characteristics are fixed and cannot adapt to changing road conditions. This project focuses on developing an active suspension control system capable of minimizing body oscillations and improving damping performance under external disturbances.
+The suspension model was analyzed using MATLAB and Simulink, and a PD controller was implemented to improve damping behavior and reduce settling time.
 
-The suspension system was modeled using a second-order transfer function and analyzed in MATLAB and Simulink. A controller was designed to improve system stability, reduce settling time, and suppress oscillations caused by road bumps.
+The main objective was not just to make the system stable, but to improve how efficiently and smoothly the vehicle stabilizes after a disturbance.
+
 
 ---
 
@@ -21,17 +23,34 @@ G(s) = 1 / (s² + 3s + 2)
 
 ### Objectives
 
-* Minimize oscillations
-* Improve damping behavior
-* Reduce settling time
-* Compare controlled and uncontrolled responses
-* Evaluate disturbance rejection capability
+*Reduce settling time
+
+*Improve damping behavior
+
+*Reduce body vibrations
+
+*Compare open-loop and closed-loop response
+
+*Analyze controller tuning effects
 
 ---
 
-## System Description
+##  System Analysis
 
-The suspension model represents the vertical dynamics of a vehicle body subjected to road disturbances. The disturbance is modeled as a step input representing a road bump.
+Open-Loop Response
+The original system was first analyzed without a controller.
+
+Observations:
+
+*System was stable
+
+*Response was smooth
+
+*Minimal oscillations observed
+
+*Settling time was around 5–6 seconds
+
+This showed that the system was already stable, but its transient response could be improved.
 
 ### Inputs and Outputs
 
@@ -42,7 +61,19 @@ The suspension model represents the vertical dynamics of a vehicle body subjecte
 The controller continuously adjusts the control force to stabilize the system and reduce vibration amplitude.
 
 ---
+## Damping Study
+Different systems were tested to understand damping behavior.
 
+System Type	Observation
+Low damping system--->Large oscillations and slow stabilization
+
+Original system--->Stable response with moderate damping
+
+Highly damped system--->Faster stabilization and smoother response
+
+This analysis helped in understanding the balance between ride comfort and stability.
+
+---
 ## Methodology
 
 The project was implemented in the following stages:
@@ -57,7 +88,6 @@ The project was implemented in the following stages:
 Controller parameters were tuned based on system response and transient performance requirements.
 
 ---
-
 ## Tools and Software Used
 
 * MATLAB
@@ -65,10 +95,78 @@ Controller parameters were tuned based on system response and transient performa
 * PID Tuner
 
 ---
+## Why PD Controller Instead of PID?
+A PD controller was selected because the project mainly required:
 
-## Results and Observations
+*Faster stabilization
 
-The controlled suspension system showed noticeable improvement compared to the uncontrolled system. Oscillations were reduced significantly, and the system reached steady state faster after the disturbance was applied.
+*Damping improvement
+
+*Vibration reduction
+
+Better transient response
+|Reason for Avoiding PID|
+The system already had no significant steady-state error, so integral action was not necessary.
+
+*Using integral control in suspension systems can:
+
+*Increase overshoot
+
+*Make the response aggressive
+
+*Reduce ride comfort
+
+Therefore, PD control provided a better balance for suspension vibration control.
+
+---
+
+## Gain Tuning Observations
+🔹 Case 1: Aggressive Controller
+Kp = 10, Kd = 5
+
+Result:
+
+*Very fast stabilization
+
+*Large body displacement
+
+*Harsh response
+
+*System becomes very stiff
+
+→ Reduces ride comfort
+
+This showed that minimizing settling time alone is not sufficient in suspension design.
+
+🔹 Case 2: Optimized Controller
+Kp = 1, Kd = 0.1
+
+Result:
+
+*Reduced body displacement
+
+*Smoother response
+
+*Better comfort
+
+*Improved settling time
+
+This tuning produced a balanced suspension behavior.
+
+---
+
+##  Results
+The PD-controlled suspension system achieved:
+
+*Improved damping performance
+
+*Reduced settling time
+
+*Smoother stabilization
+
+*Reduced vibrations
+
+*Better overall system response
 
 ### Improvements Achieved
 
@@ -97,18 +195,12 @@ These systems improve ride quality, vehicle stability, and passenger comfort und
 
 ## Repository Structure
 
-MATLAB_Code → MATLAB scripts used for analysis and controller design
-
-Simulink_Model → Simulink implementation of the suspension system
-
-Results → Response plots and simulation outputs
-
-Documentation → Project report and supporting documents
-
-Video_Demo → Demonstration video of system operation
-
-Images → Block diagrams and screenshots
-
+MATLAB_Code/       → MATLAB scripts  
+Simulink_Model/    → Simulink files  
+Results/           → Response plots  
+Documentation/     → Reports  
+Images/            → Screenshots  
+Video_Demo/        → Demo video  
 ---
 
 ## Future Scope
@@ -123,7 +215,9 @@ Future improvements can include:
 
 ---
 
-## Conclusion
+##  Conclusion
+This project explored the application of feedback control in automotive suspension systems.
 
-This project demonstrates the application of control system engineering in automotive vibration reduction. By implementing a feedback controller, the suspension system achieved improved damping characteristics and better stability under disturbance conditions. The work highlights the importance of active control techniques in modern vehicle dynamics and ride comfort enhancement.
+A PD controller was implemented to improve damping characteristics and reduce settling time while maintaining smoother body motion.
 
+The work also highlighted the importance of controller tuning and the engineering balance between ride comfort and vehicle stability.
