@@ -23,15 +23,15 @@ G(s) = 1 / (s² + 3s + 2)
 
 ### Objectives
 
-*Reduce settling time
+* Reduce settling time
 
-*Improve damping behavior
+* Improve damping behavior
 
-*Reduce body vibrations
+* Reduce body vibrations
 
-*Compare open-loop and closed-loop response
+* Compare open-loop and closed-loop response
 
-*Analyze controller tuning effects
+* Analyze controller tuning effects
 
 ---
 
@@ -42,13 +42,13 @@ The original system was first analyzed without a controller.
 
 Observations:
 
-*System was stable
+* System was stable
 
-*Response was smooth
+* Response was smooth
 
-*Minimal oscillations observed
+* Minimal oscillations observed
 
-*Settling time was around 5–6 seconds
+* Settling time was around 5–6 seconds
 
 This showed that the system was already stable, but its transient response could be improved.
 
@@ -87,62 +87,59 @@ The project was implemented in the following stages:
 
 Controller parameters were tuned based on system response and transient performance requirements.
 
----
-## Tools and Software Used
-
-* MATLAB
-* Simulink
-* PID Tuner
 
 ---
 Tuning Results
+
 Case 1:
 High Gains (Kp=10, Kd=5)
-*Fast response
 
-*Large displacement
+* Fast response
 
-*Very stiff system
+* Large displacement
 
-*Poor comfort
+* Very stiff system
+
+* Poor comfort
+
+
 Case 2:
-Optimized Gains (Kp=1, Kd=0.1)
-*Reduced displacement
+Optimized Gains (Kp=1, Kd=0.5)
 
-*Smooth response
+* Reduced displacement
 
-*Better comfort
+* Smooth response
 
-*Faster settling (~2–3 sec)
+* Better comfort
 
+* Faster settling (~2–3 sec)
 
 Result:
 
-*Very fast stabilization
+* Very fast stabilization
 
-*Large body displacement
+* Large body displacement
 
-*Harsh response
+* Harsh response
 
-*System becomes very stiff
+* System becomes very stiff
 
 → Reduces ride comfort
 
 This showed that minimizing settling time alone is not sufficient in suspension design.
 
-Case 2: Optimized Controller
-Kp = 1, Kd = 0.1
+
 
 
 ---
 ## Tools Used
-*MATLAB
+* MATLAB
 
-*Simulink
+* Simulink
 
-*Control System Toolbox
+* Control System Toolbox
 
-*PID Tuner
+* PID Tuner
 
 ---
 
@@ -159,17 +156,16 @@ Kp = 1, Kd = 0.1
 ##  Results
 The PD-controlled suspension system achieved:
 
-*Improved damping performance
+* Improved damping performance
 
-*Reduced settling time
+* Reduced settling time
 
-*Smoother stabilization
+* Smoother stabilization
 
-*Reduced vibrations
+* Reduced vibrations
 
-*Better overall system response
+* Better overall system response
 
-n
 
 Response plots comparing open-loop and closed-loop systems are included in the Results folder.
 
