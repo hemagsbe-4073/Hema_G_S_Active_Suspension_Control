@@ -95,34 +95,26 @@ Controller parameters were tuned based on system response and transient performa
 * PID Tuner
 
 ---
-## Why PD Controller Instead of PID?
-A PD controller was selected because the project mainly required:
+Tuning Results
+Case 1:
+High Gains (Kp=10, Kd=5)
+*Fast response
 
-*Faster stabilization
+*Large displacement
 
-*Damping improvement
+*Very stiff system
 
-*Vibration reduction
+*Poor comfort
+Case 2:
+Optimized Gains (Kp=1, Kd=0.1)
+*Reduced displacement
 
-Better transient response
-|Reason for Avoiding PID|
-The system already had no significant steady-state error, so integral action was not necessary.
+*Smooth response
 
-*Using integral control in suspension systems can:
+*Better comfort
 
-*Increase overshoot
+*Faster settling (~2–3 sec)
 
-*Make the response aggressive
-
-*Reduce ride comfort
-
-Therefore, PD control provided a better balance for suspension vibration control.
-
----
-
-## Gain Tuning Observations
-🔹 Case 1: Aggressive Controller
-Kp = 10, Kd = 5
 
 Result:
 
@@ -138,20 +130,29 @@ Result:
 
 This showed that minimizing settling time alone is not sufficient in suspension design.
 
-🔹 Case 2: Optimized Controller
+Case 2: Optimized Controller
 Kp = 1, Kd = 0.1
 
-Result:
 
-*Reduced body displacement
+---
+## Tools Used
+*MATLAB
 
-*Smoother response
+*Simulink
 
-*Better comfort
+*Control System Toolbox
 
-*Improved settling time
+*PID Tuner
 
-This tuning produced a balanced suspension behavior.
+---
+
+## Improvements Achieved
+
+* Reduced vibration amplitude
+* Improved damping response
+* Faster stabilization
+* Better disturbance rejectio
+
 
 ---
 
@@ -168,12 +169,7 @@ The PD-controlled suspension system achieved:
 
 *Better overall system response
 
-### Improvements Achieved
-
-* Reduced vibration amplitude
-* Improved damping response
-* Faster stabilization
-* Better disturbance rejection
+n
 
 Response plots comparing open-loop and closed-loop systems are included in the Results folder.
 
