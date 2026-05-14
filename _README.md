@@ -195,12 +195,11 @@ These systems improve ride quality, vehicle stability, and passenger comfort und
 
 ## Repository Structure
 
-MATLAB_Code/       → MATLAB scripts  
-Simulink_Model/    → Simulink files  
-Results/           → Response plots  
-Documentation/     → Reports  
-Images/            → Screenshots  
-Video_Demo/        → Demo video  
+MATLAB_Code       → MATLAB scripts  
+Simulink_Model    → Simulink files  
+Results           → Response plots  
+Documentation     → Reports  
+Video_Demo        → Demo video  
 
 
 ---
