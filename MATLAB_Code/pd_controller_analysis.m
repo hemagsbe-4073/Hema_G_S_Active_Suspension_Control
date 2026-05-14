@@ -9,8 +9,8 @@ den = [1 3 2];
 G = tf(num, den);
 
 % PD Controller parameters
-Kp = 1;
-Kd = 0.5;
+Kp = 1.3;
+Kd = 1.5;
 
 % PD Controller
 C = pid(Kp, 0, Kd);
